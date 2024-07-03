@@ -10,30 +10,50 @@ for(i = 0; i<16 *16;i++){
     container.appendChild(div);
 
     div.addEventListener('mouseover',()=>{
-        div.style.backgroundColor = "red";
-    })
+        rgb();
+        div.style.backgroundColor = Color;
+
+    });
 }
 
 btn.addEventListener('click',() =>{
-    stored = prompt("How many squares do you need?");
+    stored = prompt("How many squares do you need per side?");
 
     if(stored > 100) return alert("The max number is 99");
     container.innerHTML ='';
+
     for(i = 0; i < stored * stored;i++){
+
         const divs = document.createElement("div");
         const width = (1/stored)*100;
         const height = (1/stored)*100;
+
         divs.style.border = "solid 1px white";
         divs.style.width = width+"%";
         divs.style.height = height+"%";
         container.appendChild(divs);
         
         divs.addEventListener('mouseover',()=>{
-            divs.style.backgroundColor = "red";
+            rgb();
+            divs.style.backgroundColor = Color;
         });
         
     } 
 });
+
+function rgb(){
+
+    R = random(0,255);
+    G = random(0,255);
+    B = random(0,255);
+
+       Color = `rgb(${R},${G},${B})`;
+       return Color;
+}
+
+function random(min,max){
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
 
 
