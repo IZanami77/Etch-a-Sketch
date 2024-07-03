@@ -6,28 +6,20 @@ body{
 }
 
 button{
-    background-color: brown;
-    color: #fff;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 8px;
-    max-width: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .container{
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    border: black solid 2px;
     display: flex;
-    flex-wrap:wrap;
-    max-width: 500px;
-    max-height: 200px;
+    flex-wrap: wrap;
 }
 
 .container div{
-    min-width: 25px;
-    min-height: 25px;
-    background-color: black;
-    transition: background-color;
-}
-
-.container div:hover {
-    background-color: #fff;
+    width: 6.25%;
+    height: 6.25%;
+    box-sizing: border-box;
 }
